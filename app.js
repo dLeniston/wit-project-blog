@@ -12,7 +12,9 @@ passportLocalMongoose = require("passport-local-mongoose");
 
 var app = express();
 
-mongoose.connect("mongodb://localhost/project_blog_app_V2");
+//mongoose.connect("mongodb://localhost/project_blog_app_V2");
+//mongodb://darren:cSas831SdcAa@ds113455.mlab.com:13455/projectblog
+mongoose.connect("mongodb://darren:cSas831SdcAa@ds113455.mlab.com:13455/projectblog");
 
 app.use(require("express-session")({
     secret: "X92 GGAAKS DJSDAA",
@@ -127,11 +129,12 @@ app.delete("/blogs/:id", isLoggedIn, function(req, res){
     });
 });
 
-app.get("/register", function(req, res){
+//REGISTER ROUTES FOR ADMIN USER
+/*app.get("/register", function(req, res){
     res.render("register");
-});
+});*/
 
-app.post("/register", function(req, res){
+/*app.post("/register", function(req, res){
     User.register(new User({username: req.body.username}), req.body.password, function(err, user){
         if(err){
             console.log(err);
@@ -141,7 +144,8 @@ app.post("/register", function(req, res){
             res.redirect("/blogs");
         })
     });
-})
+})*/
+
 //LOGIN ROUTES
 app.get("/login", function(req, res){
     res.render("login");
