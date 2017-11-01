@@ -53,11 +53,11 @@ app.get("/", function(req, res){
 
 //INDEX ROUTE
 app.get("/blogs", function(req, res){
-    Blog.find({}, function(err, blogs){
+    Blog.find({}).sort({created: 1}).exec(function(err, allBlogs){
         if(err){
             console.log("Error");
         }else{
-            res.render("index", {blogs: blogs});
+            res.render("index", {blogs: allBlogs});
         }
     });
 });
