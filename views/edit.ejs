@@ -6,7 +6,7 @@
         <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
             <div class="field">
                 <label>Title</label>
-                <input type="text" name="blog[title]" value="<%= blog.title %>">
+                <input type="text" name="blog[title]" value="<%= blog.title %>" required>
             </div>
             <div class="field">
                 <label>Image</label>
@@ -14,7 +14,7 @@
             </div>
             <div class="field">
                 <label>Blog Content</label>
-                <textarea name="blog[body]"><%= blog.body %></textarea>
+                <textarea name="blog[body]" required><%= blog.body %></textarea>
             </div>
             <input class="ui basic big violet button" type="submit">
         </form>
