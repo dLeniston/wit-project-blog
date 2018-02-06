@@ -12,7 +12,9 @@ passportLocalMongoose = require("passport-local-mongoose");
 
 var app = express();
 
-mongoose.connect("DATABASE_NAME");
+//mongoose.connect("mongodb://localhost/project_blog_app_V2");
+//mongodb://darren:cSas831SdcAa@ds113455.mlab.com:13455/projectblog
+mongoose.connect("mongodb://darren:cSas831SdcAa@ds113455.mlab.com:13455/projectblog");
 
 app.use(require("express-session")({
     secret: "X92 GGAAKS DJSDAA",
